@@ -6,3 +6,19 @@ Xml/Lint/Schema_Valid:
   Description: Check that the XML conforms to the MODS schema
   EnforcedSchema: http://www.loc.gov/standards/mods/v3/mods-3-6.xsd
   Enabled: true
+
+Mods/Fields/Title:
+  Description: Check that a record has a title
+  Enabled: true
+
+# Title
+# Collection
+# Unique Identifier
+#  empty and irrelevant tag
+# Clean up leading/trailing spaces
+# Fix "formatted" text blocks that should wrap
+# Date formats
+# Expand relator codes to full value (all MODS)
+# Uses URIs to authorities
+#  code to full value
+# use real codes for coded values
