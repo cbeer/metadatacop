@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH.unshift(File.dirname(File.realpath(__FILE__)) + '/../lib')
+
+require 'metadatacop'
+require 'optparse'
+
+options = MetadataCop::Options.parse(ARGV)
+
+if options[:type].nil?
+  MetadataCop::Options.parse(['--help'])
+  exit 1
+end
+
+cli = MetadataCop::CLI.new options
+
+exit_code = cli.run ARGV
+
+exit exit_code

@@ -1,0 +1,8 @@
+Xml/Lint/Valid:
+  Description: Check if the XML is valid XML
+  Enabled: true
+
+Xml/Lint/Schema_Valid:
+  Description: Check that the XML conforms to the MODS schema
+  EnforcedSchema: http://www.loc.gov/standards/mods/v3/mods-3-6.xsd
+  Enabled: true
