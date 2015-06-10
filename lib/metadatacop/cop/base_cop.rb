@@ -15,8 +15,14 @@ module MetadataCop
         self.class.to_s =~ /Lint/
       end
 
-      def offense(message)
-        MetadataCop::Offense.new(cop: self.class, message: message)
+      def add_offense(options = {})
+        MetadataCop::Offense.new(cop: self.class, severity: severity, message: message(options))
+      end
+
+      private
+
+      def default_severity
+        'ERROR'
       end
     end
   end

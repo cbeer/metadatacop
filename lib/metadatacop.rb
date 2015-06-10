@@ -14,10 +14,19 @@ module MetadataCop
   require 'active_support/inflector'
   require 'nokogiri'
   require 'open-uri'
+  require 'rainbow'
   require 'yaml'
 
   require 'metadatacop/cop/base_cop'
   require 'metadatacop/cop/xml/lint/valid'
   require 'metadatacop/cop/xml/lint/schema_valid'
   require 'metadatacop/cop/mods/fields/title'
+
+  def self.rainbow
+    @rainbow ||= Rainbow.new
+  end
+
+  def self.colorize(string, *args)
+    rainbow.wrap(string).color(*args)
+  end
 end

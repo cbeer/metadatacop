@@ -11,13 +11,11 @@ module MetadataCop
             record = ::Mods::Record.new.from_file(file)
 
             if record.title_info.blank?
-              Array.wrap(offense(message(reason: 'but unable to find a <titleInfo> element')))
+              add_offense(reason: 'but unable to find a <titleInfo> element')
             elsif record.full_titles.blank?
-              Array.wrap(offense(message(reason: 'but unable to find a <titleInfo><title> element')))
+              add_offense(reason: 'but unable to find a <titleInfo><title> element')
             elsif record.full_titles.reject(&:blank?).blank?
-              Array.wrap(offense(message(reason: 'but all titles were blank')))
-            else
-              []
+              add_offense(reason: 'but all titles were blank')
             end
           end
         end

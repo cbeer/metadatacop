@@ -15,6 +15,12 @@ module MetadataCop
       paths.flatten.each_with_object(offenses) do |file, h|
         file_offenses = process_file(file).flatten
 
+        if file_offenses.empty?
+          puts MetadataCop.colorize('.', :green)
+        else
+          puts MetadataCop.colorize('E', :red)
+        end
+
         h[file] ||= []
         h[file] += file_offenses
       end

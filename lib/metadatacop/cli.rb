@@ -12,6 +12,7 @@ module MetadataCop
 
       report_offenses(runner.offenses)
 
+      puts "#{runner.offenses.length} files inspected; #{runner.offenses.values.flatten.length} offenses detected"
       runner.success? ? 0 : 1
     rescue StandardError => e
       $stderr.puts e.message
@@ -26,7 +27,7 @@ module MetadataCop
 
       runner_offenses.each do |file, offenses|
         offenses.each do |o|
-          puts "#{file}: #{o.message} (#{o.cop})"
+          puts "#{MetadataCop.colorize(file, :cyan)}: #{o.message} (#{o.cop})"
         end
       end
     end

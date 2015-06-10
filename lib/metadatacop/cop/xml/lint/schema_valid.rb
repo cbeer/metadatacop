@@ -3,10 +3,14 @@ module MetadataCop
     module Xml
       module Lint
         class SchemaValid < Valid
+          MSG = 'Record was not schema valid: %{message}'
+
           def investigate(file)
             doc = Nokogiri::XML(File.read(file))
 
-            xsd.validate(doc).map { |m| offense(m) }
+            xsd.validate(doc).map do |m|
+              add_offense(message: m)
+            end
           end
 
           private
