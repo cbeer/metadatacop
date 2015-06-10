@@ -20,6 +20,7 @@ module MetadataCop
       end
 
       def run_cops(cops, file)
+        MetadataCop.logger.debug "Running cops: #{cops.inspect} on #{file}"
         cops.inject([]) do |offenses, cop|
           offenses + cop.investigate(file)
         end

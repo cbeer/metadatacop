@@ -24,6 +24,7 @@ module MetadataCop
     def cop?(cop, _)
       cop_class(cop) < MetadataCop::Cop::BaseCop
     rescue NameError
+      MetadataCop.logger.warn "Unable to find cop: #{c}"
       false
     end
 
