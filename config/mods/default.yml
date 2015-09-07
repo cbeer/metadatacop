@@ -15,6 +15,10 @@ Mods/Fields/Identifier:
   Description: Check that a record has an identifier
   Enabled: true
 
+Mods/Lint/Uri:
+  Description: Check that a record has valid URI fields
+  Enabled: true
+
 # Collection
 #  empty and irrelevant tag
 # Clean up leading/trailing spaces
