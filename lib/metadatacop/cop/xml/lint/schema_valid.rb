@@ -11,6 +11,8 @@ module MetadataCop
             xsd.validate(doc).map do |m|
               add_offense(message: m)
             end
+          rescue => e
+           add_offense(message: e)
           end
 
           private

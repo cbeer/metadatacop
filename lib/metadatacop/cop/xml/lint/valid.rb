@@ -9,6 +9,8 @@ module MetadataCop
             doc = Nokogiri::XML(File.read(file))
 
             doc.errors.map { |m| add_offense(message: m) }
+          rescue => e
+            add_offense(message: e)
           end
         end
       end
