@@ -16,7 +16,9 @@ module MetadataCop
       end
 
       def add_offense(options = {})
-        MetadataCop::Offense.new(cop: self.class, severity: severity, message: message(options))
+        MetadataCop::Offense.new(cop: self.class,
+                                 severity: options.fetch(:severity, default_severity),
+                                 message: message(options))
       end
 
       private
