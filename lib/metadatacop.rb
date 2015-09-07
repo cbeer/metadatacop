@@ -21,6 +21,7 @@ module MetadataCop
   require 'metadatacop/cop/xml/lint/valid'
   require 'metadatacop/cop/xml/lint/schema_valid'
   require 'metadatacop/cop/mods/fields/title'
+  require 'metadatacop/cop/mods/fields/identifier'
 
   def self.rainbow
     @rainbow ||= Rainbow.new

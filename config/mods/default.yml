@@ -11,9 +11,11 @@ Mods/Fields/Title:
   Description: Check that a record has a title
   Enabled: true
 
-# Title
+Mods/Fields/Identifier:
+  Description: Check that a record has an identifier
+  Enabled: true
+
 # Collection
-# Unique Identifier
 #  empty and irrelevant tag
 # Clean up leading/trailing spaces
 # Fix "formatted" text blocks that should wrap
